@@ -56,6 +56,9 @@ public:
     explicit LadybirdQApplication(Main::Arguments& arguments)
         : QApplication(arguments.argc, arguments.argv)
     {
+        // Set desktop file name for Wayland icon lookup.
+        // Must match the installed .desktop file basename.
+        QGuiApplication::setDesktopFileName("org.ladybird.Ladybird");
     }
 
     virtual bool event(QEvent* event) override
